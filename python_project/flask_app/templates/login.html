@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Log into Account </title>
+</head>
+
+<body>
+
+    <div class="login_container">
+
+        <nav class="navbar">
+            <h2>Golf Buddy</h2>
+            <a href="/">Home</a>
+        </nav>
+
+        <div class="login">
+            <h2>Login Page</h2>
+            {% with errors = get_flashed_messages(category_filter=["invalid_email"]) %}
+            {% if errors %}
+            <div class="validation">
+                <ul>
+                    {%- for msg in errors %}
+                    <li>{{ msg }}</li>
+                    {% endfor -%}
+                </ul>
+            </div>
+            {% endif %}
+            {% endwith %}
+            <form action="/loginaccount" method="post" class="d-flex flex-column m-3">
+                <label>Email:</label>
+                <input type="text" name="email">
+                <label>Password:</label>
+                <input type="password" name="password">
+                <input class = "login_btn" type="submit" value="Login">
+            </form>
+
+            <p>If not a user, click <a href="/create">here</a> to create an account </p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

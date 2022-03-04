@@ -1,0 +1,150 @@
+ *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* outline: 1px dotted red; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar{
+    height: 50px;
+    padding: 0px 5px;
+    align-items: center;
+    color: white;
+    background-color: blue;
+}
+
+.navbar a{
+    color: white;
+}
+
+body{
+    background-color: whitesmoke;
+}
+.navbar2{
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    padding: 5px 5px 0px 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar2 a{
+    color: black;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 20px 5px;
+    justify-content: space-between;
+}
+
+.bodyContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftContainer{
+    width: 1000px;
+}
+
+.weatherContainer{
+    background-color:whitesmoke;
+    padding-bottom: 10px;
+}
+
+.dayContainer{
+    margin: 0 auto;
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.weather-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 400px;
+    padding: 20px;
+
+
+}
+
+.login_btn{
+    margin-top: 5px;
+}
+
+
+.searchContainer{
+    margin-top: 10px;
+    padding: 0px 5px;
+}
+
+.hourContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.courses{
+    color: red;
+}
+
+.tee_time{
+    padding: 5px;
+}
+
+ul{
+    list-style-type: none;
+    color: red;
+}
+
+.min_max{
+    display: flex;
+    gap: 5px;
+}
+
+.media{
+    text-align: center;
+    width: 600px;
+}
+
+.showtee{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 400px;
+    padding: 20px;
+
+
+}
+
+.profile{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 1000px;
+    /* margin: 0 auto; */
+    margin: 20px 0px 0px 5px;
+    height: 200px;
+
+
+}

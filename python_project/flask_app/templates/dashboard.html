@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>Golf Planner</h2>
+        <div>
+            <a href="/">Home</a>
+            |
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+    <nav class="navbar2">
+        <h4>Welcome {{user.first_name}}! </h4>
+        <div>
+            <a href="/plans">My Plans</a>
+            |
+            <a href="/profile">My Profile</a>
+        </div>
+
+    </nav>
+
+    <div class="location">
+        <div>
+            <label>City:</label>
+            <input type="text" id="cityInput">
+            <button type="button" onclick="getWeather()">Search City</button>
+        </div>
+
+    </div>
+    <div class="bodyContainer">
+
+        <div class="leftContainer">
+            <!-- Weather -->
+            <div class="weatherContainer">
+                <div class="hourContainer">
+                    <div class="weather-container">
+                        <div class="time" id="day1">
+                            <p>Monday</p>
+                        </div>
+                        <div class="temperature-description" id="description1">
+                            <p> sunny </p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="{{ url_for('static', filename='img/01d.png') }}" id="img1">
+                        </div>
+                        <div class="temperature-value" id="day1temp">
+                            <p>50°F </p>
+                        </div>
+                        <div class="min_max">
+                            <div class="temperature-max" id="day1tempMax">
+                                <p>55°F</p>
+                            </div>
+                            <div class="temperature-min" id="day1tempMin">
+                                <p>48°F</p>
+                            </div>
+                        </div>
+                        <div class="humidity" id="humidity1">
+                            <p> Humidity: 25 </p>
+                        </div>
+                        <div class="windspeed" id="windspeed1">
+                            <p> Wind Speed: 2mph </p>
+                        </div>
+                    </div>
+                    <div class="weather-container">
+                        <div class="time" id="day2">
+                            <p>Tuesday</p>
+                        </div>
+                        <div class="temperature-description" id="description2">
+                            <p> sunny </p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="{{ url_for('static', filename='img/02d.png') }}" id="img2">
+                        </div>
+                        <div class="temperature-value" id="day2temp">
+                            <p>50°F </p>
+                        </div>
+                        <div class="min_max">
+                            <div class="temperature-max" id="day2tempMax">
+                                <p>55°F</p>
+                            </div>
+                            <div class="temperature-min" id="day2tempMin">
+                                <p>48°F</p>
+                            </div>
+                        </div>
+                        <div class="humidity" id="humidity2">
+                            <p> Humidity: 25 </p>
+                        </div>
+                        <div class="windspeed" id="windspeed2">
+                            <p> Wind Speed: 2mph </p>
+                        </div>
+                    </div>
+                    <div class="weather-container">
+                        <div class="time" id="day3">
+                            <p>Wednesday</p>
+                        </div>
+                        <div class="temperature-description" id="description3">
+                            <p> sunny </p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="{{ url_for('static', filename='img/01d.png') }}" id="img3">
+                        </div>
+                        <div class="temperature-value" id="day3temp">
+                            <p>50°F </p>
+                        </div>
+                        <div class="min_max">
+                            <div class="temperature-max" id="day3tempMax">
+                                <p>55°F</p>
+                            </div>
+                            <div class="temperature-min" id="day3tempMin">
+                                <p>48°F</p>
+                            </div>
+                        </div>
+                        <div class="humidity" id="humidity3">
+                            <p> Humidity: 25 </p>
+                        </div>
+                        <div class="windspeed" id="windspeed3">
+                            <p> Wind Speed: 2mph </p>
+                        </div>
+                    </div>
+                    <div class="weather-container">
+                        <div class="time" id="day4">
+                            <p>Thursday</p>
+                        </div>
+                        <div class="temperature-description" id="description4">
+                            <p> sunny </p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="{{ url_for('static', filename='img/02d.png') }}" id="img4">
+                        </div>
+                        <div class="temperature-value" id="day4temp">
+                            <p>50°F </p>
+                        </div>
+                        <div class="min_max">
+                            <div class="temperature-max" id="day4tempMax">
+                                <p>55°F</p>
+                            </div>
+                            <div class="temperature-min" id="day4tempMin">
+                                <p>48°F</p>
+                            </div>
+                        </div>
+                        <div class="humidity" id="humidity4">
+                            <p> Humidity: 25 </p>
+                        </div>
+                        <div class="windspeed" id="windspeed4">
+                            <p> Wind Speed: 2mph </p>
+                        </div>
+                    </div>
+                    <div class="weather-container">
+                        <div class="time" id="day5">
+                            <p>Friday</p>
+                        </div>
+                        <div class="temperature-description" id="description5">
+                            <p> sunny </p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="{{ url_for('static', filename='img/01d.png') }}" id="img5">
+                        </div>
+                        <div class="temperature-value" id="day5temp">
+                            <p>50°F </p>
+                        </div>
+                        <div class="min_max">
+                            <div class="temperature-max" id="day5tempMax">
+                                <p>55°F</p>
+                            </div>
+                            <div class="temperature-min" id="day5tempMin">
+                                <p>48°F</p>
+                            </div>
+                        </div>
+                        <div class="humidity" id="humidity5">
+                            <p> Humidity: 25 </p>
+                        </div>
+                        <div class="windspeed" id="windspeed5">
+                            <p> Wind Speed: 2mph </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- Nearby Golf Courses -->
+            <div class="searchContainer">
+                <h5>Search for Golf Courses Here</h5>
+            </div>
+            <div class="gcse-search">
+                <script async src="https://cse.google.com/cse.js?cx=ab57cf8c0f7148c32"></script>
+            </div>
+
+            <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+        </div>
+        <div class="rightContainer">
+            <div class="media">
+                <h5>Upcoming Rounds</h5>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Tee Time</th>
+                            <th>Who's Playing</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for round in rounds %}
+                        <tr>
+                            <td>{{round.course_name}}</td>
+                            <td>{{round.tee_time}}</td>
+                            <td><a href="/profile/{{ round.user.id }}">{{round.user.first_name}}
+                                    {{round.user.last_name}}</a></td>
+
+                            {% if round.user.id == session["user_id"] %}
+                            <td>
+                                <a href="/rounds/{{ round.id }}/edit">Edit</a>
+                                |
+                                <a href="/rounds/delete/{{ round.id }}">Delete</a>
+                            </td>
+                            {% else %}
+                            <td>
+                                <a href="/rounds/{{ round.id }}">View</a>
+                            </td>
+                            {% endif %}
+
+
+                            {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
