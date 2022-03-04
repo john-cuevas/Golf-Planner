@@ -64,30 +64,6 @@ def courses():
 
     return render_template("plans.html", user = user, users = users)
 
-# @app.route('/golfbag')
-# def golfbag():
-#     if 'user_id' not in session:
-#         return redirect ("/")
-#     data = {
-#         "id" : session ["user_id"]
-#     }
-
-#     user = User.get_by_id(data)
-
-#     return render_template("golfbag.html", user = user)
-
-# @app.route('/friends')
-# def friends():
-#     if 'user_id' not in session:
-#         return redirect ("/")
-#     data = {
-#         "id" : session ["user_id"]
-#     }
-
-#     user = User.get_by_id(data)
-
-#     return render_template("friends.html", user = user)
-
 @app.route('/profile')
 def profile():
     if 'user_id' not in session:
